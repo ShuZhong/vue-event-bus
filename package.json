@@ -1,0 +1,40 @@
+{
+    "name": "vue-event-bus2",
+    "version": "1.0.0",
+    "description": "Vue event bus",
+    "repository": "",
+    "author": "Shu Zhong",
+    "main": "main.ts",
+    "scripts": {
+        "prod": "rimraf ./dist-prod && webpack --config ./webpack.prod.js",
+        "mocha": "mocha-webpack --webpack-config ./webpack.mocha.js --require test/setup.js test/**/*.spec.js",
+        "debug-mocha": "node --inspect-brk ./node_modules/mocha-webpack/lib/cli --webpack-config ./webpack.mocha.js --require test/setup.js test/**/*.spec.js"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "@types/node": "latest",
+        "@types/uglifyjs-webpack-plugin": "latest",
+        "@types/webpack": "latest",
+        "@types/webpack-merge": "latest",
+
+        "webpack": "latest",
+        "webpack-cli": "latest",
+        "webpack-merge": "latest",
+
+        "uglifyjs-webpack-plugin": "latest",
+
+        "js-beautify": "latest",
+        "rimraf": "latest",
+
+        "typescript": "latest",
+        "ts-loader": "latest",
+        "source-map-loader": "latest",
+
+        "mocha": "latest",
+        "mocha-webpack": "latest",
+        "jsdom": "latest",
+        "jsdom-global": "latest",
+        "chai": "latest",
+        "chai-spies": "latest"
+    }
+}

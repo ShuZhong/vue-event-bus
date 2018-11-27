@@ -1,0 +1,45 @@
+//https://tslang.cn/docs/handbook/compiler-options.html
+{
+    "compilerOptions": {
+        "outDir": "./dist-type",
+        "target": "es5",
+        "module": "UMD", // 指定生成哪个模块系统代码： "None"， "CommonJS"， "AMD"， "System"， "UMD"， "ES6"或 "ES2015"
+        "noImplicitAny": true, // 禁止隐式 any
+        "noImplicitThis": true, // 禁止隐式 this, this 不默认识别为 any
+        // "emitDecoratorMetadata": true, // 启用 元数据反射
+        // "noUnusedParameters": true,
+        "removeComments": true,
+        "preserveConstEnums": true,
+
+        // "allowSyntheticDefaultImports": true, //允许从没有设置默认导出的模块中默认导入。仅为了 antd 类型检查
+
+        "moduleResolution": "node", // 当 module === "es6" 时，必须设置，否则部分自带 typing 的模块无法找到
+
+        // "allowJs": true, // 控制是否可以引入 .js 文件
+
+        // "sourceMap": true, // webpack 下会默认关闭, 所以看起来无效
+        "lib": ["dom", "es2015", "es2016", "es2017"], // 仅仅使用 ts 进行语法检查
+
+        "jsx": "preserve", // 保留 JSX 语法, 后续使用 babel 转换
+        // "jsxFactory": "h", // h 对 vue 无效, 语法不兼容
+
+        "newLine": "LF",
+
+        // "declarationDir": "./", // 设置 .d.ts 文件路径
+        // "declaration": true, // 控制是否生成 .d.ts 文件
+
+        // "baseUrl": ".",
+        // "paths": {
+        //     "@/*": ["src/*"]
+        // },
+    },
+    "include": [
+        "src/*",
+        "src/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist",
+        "**/*.spec.ts"
+    ]
+}
