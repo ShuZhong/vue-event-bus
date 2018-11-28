@@ -4,7 +4,7 @@ import * as WebpackMerge from 'webpack-merge'
 
 import baseFile from './webpack.base'
 
-export default WebpackMerge(baseFile, {
+const mochaFile = WebpackMerge(baseFile, {
 
     output: {
         path: path.resolve(__dirname, './dist-mocha'),
@@ -14,3 +14,5 @@ export default WebpackMerge(baseFile, {
 
     externals: [WebpackNodeExternals()]
 })
+
+export default mochaFile

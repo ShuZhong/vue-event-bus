@@ -1,7 +1,7 @@
 import * as path from 'path'
-import * as MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import { Configuration } from 'webpack'
 
-export default {
+const baseFile: Configuration = {
     entry: path.resolve(__dirname, './src/index.ts'),
     stats: { children: false },
 
@@ -22,7 +22,7 @@ export default {
     },
 
     resolve: {
-        extensions: ['.js', '.ts']
+        extensions: ['.ts', '.js']
     },
 
     externals: {
@@ -34,3 +34,5 @@ export default {
         }
     }
 }
+
+export default baseFile
