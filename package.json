@@ -6,9 +6,10 @@
     "author": "Shu Zhong",
     "main": "main.ts",
     "scripts": {
-        "prod": "rimraf ./dist-prod && tsc ./webpack.prod.ts --lib es2017 && webpack --config ./webpack.prod.js",
-        "prod1": "rimraf ./dist-prod && webpack --config ./webpack.prod.js",
+        "watch": "webpack --config ./webpack.dev.ts --watch",
+        "prod": "rimraf ./dist-prod && webpack --config ./webpack.prod.ts",
         "mocha": "mocha-webpack --webpack-config ./webpack.mocha.ts --require test/setup.ts test/**/*.spec.ts",
+        "example": "npm i && npm run prod && cd ./example && npm i && npm run build && npm run sync",
         "debug-mocha": "node --inspect-brk ./node_modules/mocha-webpack/lib/cli --webpack-config ./webpack.mocha.js --require test/setup.js test/**/*.spec.js"
     },
     "dependencies": {},
@@ -18,6 +19,7 @@
         "@types/webpack": "^4.4.19",
         "@types/webpack-merge": "^4.1.3",
         "@types/webpack-node-externals": "^1.6.3",
+        "browser-sync": "^2.26.3",
         "chai": "^4.2.0",
         "chai-spies": "^1.0.0",
         "js-beautify": "^1.8.8",

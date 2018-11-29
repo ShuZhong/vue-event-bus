@@ -6,6 +6,7 @@ const baseFile: Configuration = {
     stats: { children: false },
 
     output: {
+        path: path.resolve(__dirname, './dist-prod'),
         library: 'VueEventBus2', // Only for umd/amd
         libraryTarget: 'umd', // {'var', 'umd', 'comments', 'this' ...}
         filename: './vue-event-bus2.min.js'

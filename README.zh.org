@@ -1,0 +1,54 @@
+#+TITLE vue-event-bus2
+
+* Install
+
+#+BEGIN_SRC shell-script
+npm install --save vue-event-bus2
+#+END_SRC
+
+* Setup
+
+*commonjs*
+#+BEGIN_SRC js
+var VueEventBus2 = require('vue-event-bus2')
+
+Vue.use(VueEventBus2) // default options
+// or
+VueEventBus2.(VueEventBus2, {
+    events: ['EVENT-NAME-1', 'EVENT-NAME-2', 'EVENT-NAME-3'],
+    strict: true
+})
+#+END_SRC
+
+*ES2015+*
+#+BEGIN_SRC js
+import VueEventBus2 from 'vue-event-bus2'
+
+Vue.use(VueEventBus2) // default options
+// or
+VueEventBus2.(VueEventBus2, {
+    events: ['EVENT-NAME-1', 'EVENT-NAME-2', 'EVENT-NAME-3'],
+    strict: true
+})
+#+END_SRC
+
+*External*
+#+BEGIN_SRC html
+ <!-- VueEventBus2 会在检测到 window.Vue 属性后自动注册 -->
+<!-- 该模式下所有 options 为默认值 -->
+<script src="your-folder-path/vue-event-bus2.min.js"></script>
+#+END_SRC
+
+* Usage
+
+
+
+* Options
+
+*strict: { type: boolean, default: false }*
+*events: { type: string[], default: [] }*
+
+当 =strict= 为 =true= 时，只有 =events= 中声明过的事件才是合法的。如果 监听/发送 了未经过声明的事件，会抛出错误。
+
+* License
+MIT

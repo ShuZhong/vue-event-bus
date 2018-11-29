@@ -5,11 +5,6 @@ import * as WebpackMerge from 'webpack-merge'
 import baseFile from './webpack.base'
 
 const prodFile = WebpackMerge(baseFile, {
-
-    output: {
-        path: path.resolve(__dirname, './dist-prod'),
-    },
-
     mode: 'production',
 
     optimization: {

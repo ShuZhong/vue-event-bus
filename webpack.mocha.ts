@@ -11,6 +11,7 @@ const mochaFile = WebpackMerge(baseFile, {
     },
 
     mode: 'development',
+    devtool: false,
 
     externals: [WebpackNodeExternals()]
 })

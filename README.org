@@ -1,0 +1,38 @@
+#+TITLE vue-event-bus2
+
+* Install
+
+#+BEGIN_SRC shell-script
+npm install --save vue-event-bus2
+#+END_SRC
+
+* Setup
+
+#+BEGIN_SRC js
+// commonjs
+var VueEventBus2 = require('vue-event-bus2')
+Vue.use(VueEventBus2)
+
+// ES2015+
+import VueEventBus2 from 'vue-event-bus2'
+Vue.use(VueEventBus2)
+#+END_SRC
+
+#+BEGIN_SRC html
+// External: VueEventBus2 will auto install when find window.Vue
+<script src="your-folder-path/vue-event-bus2.min.js"></script>
+#+END_SRC
+
+* Usage
+
+
+
+* Options
+
+*strict: { type: boolean, default: false }*
+*events: { type: string[], default: [] }*
+
+当 =strict= 为 =true= 时，只有 =events= 中声明的事件名称才是合法的。如果 监听/发送 了未经过声明的事件，会抛出错误信息。
+
+* License
+MIT

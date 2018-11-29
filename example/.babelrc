@@ -1,0 +1,13 @@
+{
+    "presets": [
+        ["@babel/env", {
+            "targets": {
+                "browsers": ["last 2 versions", "safari >= 7", "ie >= 10"]
+            }
+        }]
+    ],
+    "plugins": [
+        "transform-vue-jsx",
+        "@babel/plugin-proposal-object-rest-spread"
+    ]
+}
