@@ -1,20 +1,24 @@
 #+TITLE vue-event-bus2
 
-* Install
+* Feature
+1. 可选的 =strict= 模式，仅允许预先定义的事件
+2. Vue 组件销毁时自动注销事件监听器（包含匿名监听函数）
+3. 事件可传参数 =string | string[]=, 一次(监听/销毁/触发)多个事件
+4. =this= 绑定为监听器所在的组件
 
+* Install
 #+BEGIN_SRC shell-script
 npm install --save vue-event-bus2
 #+END_SRC
 
 * Setup
-
 *commonjs*
 #+BEGIN_SRC js
 var VueEventBus2 = require('vue-event-bus2')
 
 Vue.use(VueEventBus2) // default options
 // or
-VueEventBus2.(VueEventBus2, {
+Vue.use(VueEventBus2, {
     events: ['EVENT-NAME-1', 'EVENT-NAME-2', 'EVENT-NAME-3'],
     strict: true
 })
@@ -26,7 +30,7 @@ import VueEventBus2 from 'vue-event-bus2'
 
 Vue.use(VueEventBus2) // default options
 // or
-VueEventBus2.(VueEventBus2, {
+Vue.use(VueEventBus2, {
     events: ['EVENT-NAME-1', 'EVENT-NAME-2', 'EVENT-NAME-3'],
     strict: true
 })
@@ -34,21 +38,82 @@ VueEventBus2.(VueEventBus2, {
 
 *External*
 #+BEGIN_SRC html
- <!-- VueEventBus2 会在检测到 window.Vue 属性后自动注册 -->
-<!-- 该模式下所有 options 为默认值 -->
-<script src="your-folder-path/vue-event-bus2.min.js"></script>
+<script type="text/javascript" src="your-folder-path/vue-event-bus2.min.js"></script>
+<script type="text/javascript">
+  Vue.use(VueEventBus2) // default options
+  // or
+  Vue.use(VueEventBus2, {
+  events: ['EVENT-NAME-1', 'EVENT-NAME-2', 'EVENT-NAME-3'],
+  strict: true
+  })
+</script>
 #+END_SRC
 
 * Usage
+*CompOne.vue*
+#+BEGIN_SRC javascript
+// .............
+mounted() {
+    // 因为事件 this 绑定为 CompOne 组，下方4个 this 指向相同的上下文
+    this.$busOn('EVENT_1', () => { console.log(this, '11') }) // 箭头函数绑定 ES6语法特征
+    this.$busOn('EVENT_2', function() { console.log(this, '12') }) // 由 VueEventBus2 进行绑定
+    this.$busOnce('EVENT_3', () => { console.log(this, '13') }) // 箭头函数绑定 ES6语法特征
+    this.$busOn('EVENT_4', this.busOnFunc1) // Vue Methods自动绑定 由Vue框架处理
 
+    // 可一次性监听多个事件
+    this.$busOn(['EVENT_1', 'EVENT_2', 'EVENT_3'], function() { })
+},
 
+beforeDestroy() {
+    this.$busOff('EVENT_4', this.busOnFunc1)
 
-* Options
+    // 可一次性销毁多个事件(不传第二个参数时清空该事件的所有监听器)
+    this.$busOff(['EVENT_1', 'EVENT_2', 'EVENT_3'])
+},
 
+methods: {
+    busOnFunc1() { console.log(this, '14') }
+}
+// ...........
+#+END_SRC
+
+*CompTwo.vue*
+#+BEGIN_SRC javascript
+this.$busFire('EVENT_1', 'arg1', 'arg2', [1, 2, 3, 4])
+
+// 一次性顺序触发多个事件
+this.$busFire(['EVENT_1', 'EVENT_2', 'EVENT_3', 'EVENT_4'])
+this.$busFire(['EVENT_1', 'EVENT_2', 'EVENT_3', 'EVENT_4'], 'arg1', 'arg2', [1, 2, 3, 4])
+#+END_SRC
+
+* API
+** 安装插件可选参数
+#+BEGIN_SRC typescript
+Vue.use(VueEventBus2, options)
+#+END_SRC
+
+options:
 *strict: { type: boolean, default: false }*
 *events: { type: string[], default: [] }*
 
 当 =strict= 为 =true= 时，只有 =events= 中声明过的事件才是合法的。如果 监听/发送 了未经过声明的事件，会抛出错误。
 
+** 监听事件
+#+BEGIN_SRC typescript
+this.$busOn(evTag: string | string[], evFunc: Function)
+this.$busOnce(evTag: string | string[], evFunc: Function)
+#+END_SRC
+
+** 销毁事件
+#+BEGIN_SRC typescript
+this.$busOff(evTag: string | string[], evFunc?: Function)
+#+END_SRC
+
+当不传 =evFunc= 参数时，清空 =evTag= 对应的所有事件监听器。
+
+** 触发事件
+#+BEGIN_SRC typescript
+this.$busFire(evTag: string | string[], ...args: any[])
+#+END_SRC
 * License
 MIT
