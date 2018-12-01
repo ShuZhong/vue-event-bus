@@ -5,7 +5,7 @@
     "repository": "",
     "author": "Shu Zhong",
     "main": "./dist-prod/vue-event-bus2.min.js",
-    "types": "./dist-prod/vue-event-bus2.d.ts",
+    "types": "./dist-prod/index.d.ts",
     "license": "MIT",
     "scripts": {
         "watch": "webpack --config ./webpack.dev.ts --watch",

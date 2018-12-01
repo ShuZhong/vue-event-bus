@@ -26,7 +26,7 @@
 
         "newLine": "LF",
 
-        // "declaration": true, // 控制是否生成 .d.ts 文件(因为该库涉及到 Vue mixin，定义文件改为手动编写)
+        "declaration": true, // 控制是否生成 .d.ts 文件(因为该库涉及到 Vue mixin，定义文件改为手动编写)
 
         // "baseUrl": ".",
         // "paths": {
