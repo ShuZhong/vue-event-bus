@@ -1,5 +1,7 @@
 #+TITLE vue-event-bus2
 
+Read this in other languages: [[README.zh.org][简体中文]] [[README.org][English]]
+
 * Feature
 1. 可选的 =strict= 模式，仅允许预先定义的事件
 2. Vue 组件销毁时自动注销事件监听器（包含匿名监听函数）

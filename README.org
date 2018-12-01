@@ -1,5 +1,7 @@
 #+TITLE vue-event-bus2
 
+Read this in other languages: [[README.zh.org][简体中文]] [[README.org][English]]
+
 * Feature
 1. Optional =strict= mode, only accept predefined =events=
 2. Auto remove event listeners (include anonymous function) in Vue beforeDestroy hook
