@@ -1,7 +1,7 @@
 //https://tslang.cn/docs/handbook/compiler-options.html
 {
     "compilerOptions": {
-        "outDir": "./dist-type",
+        "outDir": "./dist-prod",
         "target": "es5",
         "module": "UMD", // 指定生成哪个模块系统代码： "None"， "CommonJS"， "AMD"， "System"， "UMD"， "ES6"或 "ES2015"
         "noImplicitAny": true, // 禁止隐式 any
@@ -26,8 +26,7 @@
 
         "newLine": "LF",
 
-        // "declarationDir": "./", // 设置 .d.ts 文件路径
-        // "declaration": true, // 控制是否生成 .d.ts 文件
+        // "declaration": true, // 控制是否生成 .d.ts 文件(因为该库涉及到 Vue mixin，定义文件改为手动编写)
 
         // "baseUrl": ".",
         // "paths": {
@@ -35,8 +34,7 @@
         // },
     },
     "include": [
-        "src/**/*",
-        "test/**/*"
+        "src/**/*"
     ],
     "exclude": [
         "node_modules",

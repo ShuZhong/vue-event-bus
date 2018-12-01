@@ -11,10 +11,6 @@ import Vue from 'vue'
 const CompOne = Vue.extend({
     name: 'CompOne',
 
-    created() {
-        this.$busOn('EVENT_1', () => { console.log(this, '11') })
-    },
-
     mounted() {
         console.log(this, '1')
 
@@ -23,6 +19,10 @@ const CompOne = Vue.extend({
         this.$busOnce('EVENT_3', () => { console.log(this, '13') })
 
         this.$busOn('EVENT_4', this.busOnFunc1)
+
+        this.$busOn(['EVENT_1', 'EVENT_3'], (...args) => {
+            console.log(this, args)
+        })
     },
 
     beforeDestroy() {

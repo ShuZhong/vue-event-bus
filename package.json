@@ -4,7 +4,9 @@
     "description": "Vue event bus",
     "repository": "",
     "author": "Shu Zhong",
-    "main": "main.ts",
+    "main": "./dist-prod/vue-event-bus2.min.js",
+    "types": "./dist-prod/vue-event-bus2.d.ts",
+    "license": "MIT",
     "scripts": {
         "watch": "webpack --config ./webpack.dev.ts --watch",
         "prod": "rimraf ./dist-prod && webpack --config ./webpack.prod.ts",
@@ -14,6 +16,9 @@
     },
     "dependencies": {},
     "devDependencies": {
+        "@types/chai": "^4.1.7",
+        "@types/chai-spies": "^1.0.0",
+        "@types/jsdom": "^12.2.0",
         "@types/node": "^10.12.10",
         "@types/uglifyjs-webpack-plugin": "^1.1.0",
         "@types/webpack": "^4.4.19",

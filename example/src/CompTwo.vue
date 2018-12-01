@@ -1,5 +1,5 @@
 <template>
-    <div id="test">
+    <div id="test" @click.stop="busFireFunc">
         222
     </div>
 </template>
@@ -21,6 +21,12 @@ const CompTwo = Vue.extend({
 
     data() {
         return {}
+    },
+
+    methods: {
+        busFireFunc(ev) {
+            this.$busFire(['EVENT_1', 'EVENT_2', 'EVENT_3'], 1, 2, ev, {i1: 11, i2: 22})
+        }
     }
 })
 
