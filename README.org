@@ -108,7 +108,7 @@ this.$busOn(evTag: string | string[], evFunc: Function)
 this.$busOnce(evTag: string | string[], evFunc: Function)
 #+END_SRC
 
-** Destory event
+** Remove event
 #+BEGIN_SRC typescript
 this.$busOff(evTag: string | string[], evFunc?: Function)
 #+END_SRC

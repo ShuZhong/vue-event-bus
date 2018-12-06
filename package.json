@@ -7,6 +7,18 @@
     "main": "./dist-prod/vue-event-bus2.min.js",
     "types": "./dist-prod/index.d.ts",
     "license": "MIT",
+    "keywords": [
+        "vue",
+        "event",
+        "bus"
+    ],
+    "files": [
+        "./dist-prod",
+        "./src",
+        "./LICENSE",
+        "./README.org",
+        "./README.zh.org"
+    ],
     "scripts": {
         "watch": "webpack --config ./webpack.dev.ts --watch",
         "prod": "rimraf ./dist-prod && webpack --config ./webpack.prod.ts",

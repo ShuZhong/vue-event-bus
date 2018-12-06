@@ -17,7 +17,13 @@ const baseFile: Configuration = {
             {
                 test: /\.[jt]s$/,
                 exclude: /node_modules/,
-                loader: 'ts-loader'
+                loader: 'ts-loader',
+                options: {
+                    compilerOptions: {
+                        /* 前端项目需要配置模块系统为 ES2015（默认为 CommonJS 供 ts-node 使用） */
+                        module: 'ES2015'
+                    }
+                }
             }
         ]
     },

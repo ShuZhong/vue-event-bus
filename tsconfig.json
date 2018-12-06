@@ -3,7 +3,7 @@
     "compilerOptions": {
         "outDir": "./dist-prod",
         "target": "es5",
-        "module": "UMD", // 指定生成哪个模块系统代码： "None"， "CommonJS"， "AMD"， "System"， "UMD"， "ES6"或 "ES2015"
+        "module": "CommonJS", // 指定生成哪个模块系统代码: "None","CommonJS","AMD","System","UMD","ES6"或"ES2015"
         "noImplicitAny": true, // 禁止隐式 any
         "noImplicitThis": true, // 禁止隐式 this, this 不默认识别为 any
         "noEmitOnError": false,
