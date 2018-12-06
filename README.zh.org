@@ -100,8 +100,8 @@ Vue.use(VueEventBus2, options?: Options = { strict: false, events: [] })
 #+END_SRC
 
 options:
-+*strict: { type: boolean, default: false }*
-+*events: { type: string[], default: [] }*
++ *strict: { type: boolean, default: false }*
++ *events: { type: string[], default: [] }*
 
 当 =strict= 为 =true= 时，只有 =events= 中声明过的事件才是合法的。如果 监听/发送 了未经过声明的事件，会抛出错误。
 

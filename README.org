@@ -102,8 +102,8 @@ Vue.use(VueEventBus2, options?: Options = { strict: false, events: [] })
 #+END_SRC
 
 options:
-+*strict: { type: boolean, default: false }*
-+*events: { type: string[], default: [] }*
++ *strict: { type: boolean, default: false }*
++ *events: { type: string[], default: [] }*
 
 When =strict= is =true=, only event declared in =events= are legal. If an undeclared event is on/off/fire, an error is thrown.
 
