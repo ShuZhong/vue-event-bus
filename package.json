@@ -10,7 +10,8 @@
     "scripts": {
         "watch": "webpack --config ./webpack.dev.ts --watch",
         "prod": "rimraf ./dist-prod && webpack --config ./webpack.prod.ts",
-        "example": "npm i && npm run prod && cd ./example && npm i && npm run build && npm run sync"
+        "example": "npm i && npm run prod && cd ./example && npm i && npm run build && npm run sync",
+        "jest": "jest --config ./jest.config.js"
     },
     "dependencies": {},
     "devDependencies": {
