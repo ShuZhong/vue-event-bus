@@ -93,12 +93,17 @@ this.$busFire(['EVENT_1', 'EVENT_2', 'EVENT_3', 'EVENT_4'], 'arg1', 'arg2', [1, 
 * API
 ** Install option
 #+BEGIN_SRC typescript
-Vue.use(VueEventBus2, options)
+type Options = {
+    strict: boolean
+    events: string[]
+}
+
+Vue.use(VueEventBus2, options?: Options = { strict: false, events: [] })
 #+END_SRC
 
 options:
-*strict: { type: boolean, default: false }*
-*events: { type: string[], default: [] }*
++*strict: { type: boolean, default: false }*
++*events: { type: string[], default: [] }*
 
 When =strict= is =true=, only event declared in =events= are legal. If an undeclared event is on/off/fire, an error is thrown.
 
