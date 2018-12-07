@@ -51,7 +51,7 @@ function VueEventBus2(Vue: VueConstructor, { events = [], strict = false }: VueE
         }
     }
 
-    let busEmit = function(this: Vue, evTags: string | string[], evFunc: Function, once = false) {
+    let busAdd = function(this: Vue, evTags: string | string[], evFunc: Function, once = false) {
         if(typeof evTags === 'string') { evTags = [evTags] }
         validateEvent(evTags)
 
@@ -68,11 +68,11 @@ function VueEventBus2(Vue: VueConstructor, { events = [], strict = false }: VueE
     }
 
     let busOn = function(this: Vue, evTags: string | string[], evFunc: Function) {
-        busEmit.call(this, evTags, evFunc, false)
+        busAdd.call(this, evTags, evFunc, false)
     }
 
     let busOnce = function(this: Vue, evTags: string | string[], evFunc: Function) {
-        busEmit.call(this, evTags, evFunc, true)
+        busAdd.call(this, evTags, evFunc, true)
     }
 
     let busOff = function(evTags: string | string[], evFunc?: Function) {

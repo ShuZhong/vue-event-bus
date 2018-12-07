@@ -1,5 +1,5 @@
 {
-    "name": "vue-event-bus2",
+    "name": "@shuzhong/vue-event-bus2",
     "version": "1.0.0",
     "description": "A lightly event bus for vue",
     "repository": {
@@ -13,7 +13,10 @@
     "keywords": [
         "vue",
         "event",
-        "bus"
+        "bus",
+        "ts",
+        "typescript",
+        "auto remove"
     ],
     "files": [
         "./dist-prod",
