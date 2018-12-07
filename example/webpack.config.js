@@ -74,7 +74,7 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.jsx', '.vue'],
         alias: {
-            'vue-event-bus2': path.resolve(__dirname, '../dist-prod/vue-event-bus2.min.js')
+            '@shuzhong/vue-event-bus': path.resolve(__dirname, '../dist-prod/vue-event-bus.min.js')
         }
     },
 

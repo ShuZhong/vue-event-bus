@@ -9,7 +9,7 @@ declare module 'vue/types/vue' {
     }
 }
 
-type VueEventBus2Options = {
+type VueEventBusOptions = {
     events?: string[]
     strict?: boolean
 }
@@ -28,11 +28,11 @@ type CompEventStoreProp = {
     }
 }
 
-function VueEventBus2(Vue: VueConstructor, { events = [], strict = false }: VueEventBus2Options) {
+function VueEventBus(Vue: VueConstructor, { events = [], strict = false }: VueEventBusOptions) {
 
     let version = Number((Vue as any).version.split('.')[0])
     if(version < 2) {
-        throw new Error('[vue-event-bus2] only support vue 2+ ')
+        throw new Error('[vue-event-bus] only support vue 2+ ')
         return
     }
 
@@ -131,7 +131,7 @@ function VueEventBus2(Vue: VueConstructor, { events = [], strict = false }: VueE
 }
 
 /* if(typeof window !== 'undefined' && !!(window as any).Vue) {
- *     (window as any).Vue.use(VueEventBus2)
+ *     (window as any).Vue.use(VueEventBus)
  * } */
 
-export default VueEventBus2
+export default VueEventBus

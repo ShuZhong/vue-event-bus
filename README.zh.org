@@ -1,4 +1,6 @@
-#+TITLE vue-event-bus2
+#+TITLE: @shuzhong/vue-event-bus
+#+AUTHOR: ShuZhong
+#+EMAIL: zhongshuyx@sina.com
 
 Read this in other languages: [[README.zh.org][简体中文]] [[README.org][English]]
 
@@ -10,17 +12,17 @@ Read this in other languages: [[README.zh.org][简体中文]] [[README.org][Engl
 
 * Install
 #+BEGIN_SRC shell-script
-npm install --save vue-event-bus2
+npm install --save @shuzhong/vue-event-bus
 #+END_SRC
 
 * Setup
 *commonjs*
 #+BEGIN_SRC js
-var VueEventBus2 = require('vue-event-bus2')
+var VueEventBus = require('@shuzhong/vue-event-bus')
 
-Vue.use(VueEventBus2) // default options
+Vue.use(VueEventBus) // default options
 // or
-Vue.use(VueEventBus2, {
+Vue.use(VueEventBus, {
     events: ['EVENT-NAME-1', 'EVENT-NAME-2', 'EVENT-NAME-3'],
     strict: true
 })
@@ -28,11 +30,11 @@ Vue.use(VueEventBus2, {
 
 *ES2015+*
 #+BEGIN_SRC js
-import VueEventBus2 from 'vue-event-bus2'
+import VueEventBus from '@shuzhong/vue-event-bus'
 
-Vue.use(VueEventBus2) // default options
+Vue.use(VueEventBus) // default options
 // or
-Vue.use(VueEventBus2, {
+Vue.use(VueEventBus, {
     events: ['EVENT-NAME-1', 'EVENT-NAME-2', 'EVENT-NAME-3'],
     strict: true
 })
@@ -40,11 +42,11 @@ Vue.use(VueEventBus2, {
 
 *External*
 #+BEGIN_SRC html
-<script type="text/javascript" src="your-folder-path/vue-event-bus2.min.js"></script>
+<script type="text/javascript" src="your-folder-path/vue-event-bus.min.js"></script>
 <script type="text/javascript">
-  Vue.use(VueEventBus2) // default options
+  Vue.use(VueEventBus) // default options
   // or
-  Vue.use(VueEventBus2, {
+  Vue.use(VueEventBus, {
   events: ['EVENT-NAME-1', 'EVENT-NAME-2', 'EVENT-NAME-3'],
   strict: true
   })
@@ -58,7 +60,7 @@ Vue.use(VueEventBus2, {
 mounted() {
     // 因为事件 this 绑定为 CompOne 组件，下方4个 this 指向相同的上下文
     this.$busOn('EVENT_1', () => { console.log(this, '11') }) // 箭头函数绑定 ES6语法特征
-    this.$busOn('EVENT_2', function() { console.log(this, '12') }) // 由 VueEventBus2 进行绑定
+    this.$busOn('EVENT_2', function() { console.log(this, '12') }) // 由 VueEventBus 进行绑定
     this.$busOnce('EVENT_3', () => { console.log(this, '13') }) // 箭头函数绑定 ES6语法特征
     this.$busOn('EVENT_4', this.busOnFunc1) // Vue Methods自动绑定 由Vue框架处理
 
@@ -96,7 +98,7 @@ type Options = {
     events: string[]
 }
 
-Vue.use(VueEventBus2, options?: Options = { strict: false, events: [] })
+Vue.use(VueEventBus, options?: Options = { strict: false, events: [] })
 #+END_SRC
 
 options:

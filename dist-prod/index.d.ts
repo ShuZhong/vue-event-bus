@@ -7,9 +7,9 @@ declare module 'vue/types/vue' {
         $busFire(evTag: string | string[], ...args: any[]): void;
     }
 }
-declare type VueEventBus2Options = {
+declare type VueEventBusOptions = {
     events?: string[];
     strict?: boolean;
 };
-declare function VueEventBus2(Vue: VueConstructor, { events, strict }: VueEventBus2Options): void;
-export default VueEventBus2;
+declare function VueEventBus(Vue: VueConstructor, { events, strict }: VueEventBusOptions): void;
+export default VueEventBus;

@@ -1,11 +1,11 @@
 import Vue from 'vue'
-import VueEventBus2 from 'vue-event-bus2'
+import VueEventBus from '@shuzhong/vue-event-bus'
 
 import MainApp from './MainApp'
 
 const validEvents = ['EVENT_1', 'EVENT_2', 'EVENT_3', 'EVENT_4', 'EVENT_5']
 
-Vue.use(VueEventBus2, {
+Vue.use(VueEventBus, {
     events: validEvents, /* declare  available event */
     strict: true
 })

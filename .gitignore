@@ -28,3 +28,6 @@ node_modules
 package-lock.json
 /example/dist-test
 /.projectile
+GTAGS
+GPATH
+GRTAGS

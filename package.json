@@ -1,13 +1,13 @@
 {
-    "name": "@shuzhong/vue-event-bus2",
+    "name": "@shuzhong/vue-event-bus",
     "version": "1.0.0",
-    "description": "A lightly event bus for vue",
+    "description": "A light weight event bus for vue",
     "repository": {
         "type": "git",
-        "url": "https://github.com/ShuZhong/vue-event-bus2.git"
+        "url": "https://github.com/ShuZhong/vue-event-bus.git"
     },
     "author": "Shu Zhong",
-    "main": "./dist-prod/vue-event-bus2.min.js",
+    "main": "./dist-prod/vue-event-bus.min.js",
     "types": "./dist-prod/index.d.ts",
     "license": "MIT",
     "keywords": [
