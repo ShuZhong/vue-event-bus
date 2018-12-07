@@ -96,14 +96,12 @@ function VueEventBus(Vue: VueConstructor, { events = [], strict = false }: VueEv
         for(let evTag of evTags) {
             if(!eventStore[evTag]) { continue }
 
-            let tempQueue = []
-            for(let evPart of eventStore[evTag]) {
-                if(!evPart.once) { tempQueue.push(evPart) }
-
+            /* 当在触发事件的函数中添加新的监听函数，该添加的函数将在下一次事件时才触发 */
+            let tempQueue = eventStore[evTag].slice(0)
+            eventStore[evTag] = eventStore[evTag].filter(evPart => !evPart.once)
+            for(let evPart of tempQueue) {
                 !!evPart.evFunc && evPart.evFunc.apply(evPart.self, args)
             }
-
-            eventStore[evTag] = tempQueue
         }
     }
 
