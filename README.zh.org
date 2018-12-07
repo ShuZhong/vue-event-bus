@@ -56,7 +56,7 @@ Vue.use(VueEventBus2, {
 #+BEGIN_SRC javascript
 // .............
 mounted() {
-    // 因为事件 this 绑定为 CompOne 组，下方4个 this 指向相同的上下文
+    // 因为事件 this 绑定为 CompOne 组件，下方4个 this 指向相同的上下文
     this.$busOn('EVENT_1', () => { console.log(this, '11') }) // 箭头函数绑定 ES6语法特征
     this.$busOn('EVENT_2', function() { console.log(this, '12') }) // 由 VueEventBus2 进行绑定
     this.$busOnce('EVENT_3', () => { console.log(this, '13') }) // 箭头函数绑定 ES6语法特征

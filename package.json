@@ -1,8 +1,11 @@
 {
     "name": "vue-event-bus2",
     "version": "1.0.0",
-    "description": "Vue event bus",
-    "repository": "",
+    "description": "A lightly event bus for vue",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ShuZhong/vue-event-bus2.git"
+    },
     "author": "Shu Zhong",
     "main": "./dist-prod/vue-event-bus2.min.js",
     "types": "./dist-prod/index.d.ts",
@@ -45,6 +48,7 @@
         "typescript": "^3.2.1",
         "uglifyjs-webpack-plugin": "^2.0.1",
         "vue": "^2.5.17",
+        "vue-template-compiler": "^2.5.17",
         "webpack": "^4.26.1",
         "webpack-cli": "^3.1.2",
         "webpack-merge": "^4.1.4",
