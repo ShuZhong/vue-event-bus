@@ -11,5 +11,5 @@ declare type VueEventBusOptions = {
     events?: string[];
     strict?: boolean;
 };
-declare function VueEventBus(Vue: VueConstructor, { events, strict }: VueEventBusOptions): void;
+declare function VueEventBus(Vue: VueConstructor, { events, strict }?: VueEventBusOptions): void;
 export default VueEventBus;

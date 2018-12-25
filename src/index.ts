@@ -28,7 +28,7 @@ type CompEventStoreProp = {
     }
 }
 
-function VueEventBus(Vue: VueConstructor, { events = [], strict = false }: VueEventBusOptions) {
+function VueEventBus(Vue: VueConstructor, { events = [], strict = false }: VueEventBusOptions = {}) {
 
     let version = Number((Vue as any).version.split('.')[0])
     if(version < 2) {
